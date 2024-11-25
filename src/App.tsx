@@ -8,14 +8,14 @@ import Player from './assest/components/Player/Player';
 function App() {
   const matrixMap = [
     [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
-    [1, 0, 0, 1, 0, 0, 0, 1, 0, 1],
-    [1, 1, 1, 1, 0, 1, 0, 1, 0, 1],
-    [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
-    [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
-    [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
-    [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
-    [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
-    [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+    [1, 0, 1, 0, 0, 0, 0, 0, 0, 1],
+    [1, 0, 1, 0, 0, 0, 0, 0, 0, 1],
+    [1, 0, 1, 1, 1, 1, 1, 1, 1, 1],
+    // [1, 0, 0, 0, 0, 0, 0, 0, 0, 1],
+    // [1, 0, 0, 0, 0, 0, 0, 0, 0, 1],
+    // [1, 0, 0, 0, 0, 0, 0, 0, 0, 1],
+    // [1, 0, 0, 0, 0, 0, 0, 0, 0, 1],
+    [1, 0, 0, 0, 0, 0, 0, 0, 0, 1],
     [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
   ]
   const cards = [
@@ -77,7 +77,7 @@ function App() {
   const x = Math.floor(window.innerWidth * 0.1) / 2
   const y = Math.floor(window.innerWidth * 0.1 * 88 / 58) / 2
   const [position, setPosition] = useState({ x: x, y: y })
-  const [currentPositionMap, setCurrentPositionMap] = useState([2, 2]);
+  const [currentPositionMap, setCurrentPositionMap] = useState([0, 0]);
   const [randomNumber, setRandomNumber] = useState(0)
   const [startGame, setStartGame] = useState(false)
   const tossCubes = () => {
