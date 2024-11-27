@@ -1,0 +1,19 @@
+.cellPlayingField {
+    aspect-ratio: 1/1;
+    border: 1px solid #e4c57c;
+    margin: 1px;
+}
+
+.cellPlayingField__container {
+    height: 100%;
+    place-self: center;
+}
+
+.cellPlayingField__img {
+    margin: 5px;
+    height: calc(100% - 10px);
+    width: calc(100% - 10px);
+    object-fit: contain;
+    border: 1px solid #e4c57c;
+
+}

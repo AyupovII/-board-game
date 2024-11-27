@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import style from './Player.module.scss'
-import heroImage from './../../img/hero.png'
+import heroImage from './../../assest/img/hero.png'
 interface PlayerProps {
     position: { x: number, y: number }
     setPosition: (position: { x: number, y: number }) => void
@@ -14,7 +14,6 @@ interface PlayerProps {
     setCurrentPositionMap: ((currentPosition: [i: number, j: number]) => void)
 }
 const Player: React.FC<PlayerProps> = ({ position, setPosition, size, randomNumber, startGame, x, y, matrixMap, currentPositionMap, setCurrentPositionMap }) => {
-    // console.log("player ", position);
     const [routeMap, setRouteMap] = useState<number[][]>([currentPositionMap])
     const enum Direction {
         RIGHT = "right",
@@ -22,13 +21,11 @@ const Player: React.FC<PlayerProps> = ({ position, setPosition, size, randomNumb
         TOP = "top",
         BOTTOM = "bottom"
     }
-    console.log(routeMap)
-    const [direction, setDirection] = useState<Direction>(Direction.RIGHT)
+    const [direction, setDirection] = useState<Direction>(Direction.LEFT)
     useEffect(() => {
         const map = document.querySelector(`.map`)
         map?.addEventListener('mousemove', (e: Event | MouseEvent) => {
             // setPosition({ x: (e as MouseEvent).pageX, y: (e as MouseEvent).pageY })
-            // console.log(e.pageX, e.pageY)
         })
 
     }, [])
@@ -44,17 +41,41 @@ const Player: React.FC<PlayerProps> = ({ position, setPosition, size, randomNumb
         //     return (randomNumber % 2) ? { x, y: y + 1, direction: Direction.RIGHT } : { x: x + 1, y: y, direction: Direction.BOTTOM }
         // }
         // else 
-        if (matrixMap[x]?.[y + 1] === 1 && directionToMove !== Direction.LEFT) {
-            return { x, y: y + 1, direction: Direction.RIGHT }
+        console.log(Boolean(randomNumber % 2))
+        console.log(matrixMap[y]?.[x + 1], matrixMap[y + 1]?.[x])
+
+        if (matrixMap[y]?.[x + 1] && directionToMove !== Direction.LEFT &&
+            matrixMap[y + 1]?.[x] && directionToMove !== Direction.TOP) {
+            return randomNumber % 2 ? { y, x: x + 1, direction: Direction.LEFT } : { y: y + 1, x, direction: Direction.BOTTOM }
         }
-        else if (matrixMap[x + 1]?.[y] === 1 && directionToMove !== Direction.TOP) {
-            return { x: x + 1, y, direction: Direction.BOTTOM }
+        else if (matrixMap[y]?.[x - 1] && directionToMove !== Direction.RIGHT &&
+            matrixMap[y + 1]?.[x] && directionToMove !== Direction.TOP) {
+            return randomNumber % 2 ? { y, x: x - 1, direction: Direction.LEFT } : { y: y + 1, x, direction: Direction.BOTTOM }
         }
-        else if (matrixMap[x]?.[y - 1] === 1) {
-            return { x, y: y - 1, direction: Direction.LEFT }
+        else if (matrixMap[y]?.[x + 1] && directionToMove !== Direction.LEFT &&
+            matrixMap[y]?.[x-1] && directionToMove !== Direction.RIGHT) {
+            return randomNumber % 2 ? { y, x: x - 1, direction: Direction.RIGHT } : { y: y, x: x+1, direction: Direction.LEFT }
         }
-        else if (matrixMap[x - 1]?.[y] === 1) {
-            return { x: x - 1, y, direction: Direction.TOP }
+        else if (matrixMap[y]?.[x + 1] && directionToMove !== Direction.LEFT &&
+            matrixMap[y-1]?.[x] && directionToMove !== Direction.BOTTOM) {
+            return randomNumber % 2 ? { y:y-1, x: x, direction: Direction.RIGHT } : { y: y, x: x+1, direction: Direction.LEFT }
+        }
+        else if (matrixMap[y]?.[x - 1] && directionToMove !== Direction.RIGHT &&
+            matrixMap[y - 1]?.[x] && directionToMove !== Direction.BOTTOM) {
+            return randomNumber % 2 ? { y, x: x - 1, direction: Direction.LEFT } : { y: y - 1, x, direction: Direction.TOP }
+        }
+
+        else if (matrixMap[y]?.[x + 1] && directionToMove !== Direction.LEFT) {
+            return { y, x: x + 1, direction: Direction.RIGHT }
+        }
+        else if (matrixMap[y]?.[x - 1] && directionToMove !== Direction.RIGHT) {
+            return { y, x: x - 1, direction: Direction.LEFT }
+        }
+        else if (matrixMap[y - 1]?.[x] && directionToMove !== Direction.BOTTOM) {
+            return { y: y - 1, x, direction: Direction.TOP }
+        }
+        else if (matrixMap[y + 1]?.[x] && directionToMove !== Direction.TOP) {
+            return { y: y + 1, x, direction: Direction.BOTTOM }
         }
 
     }
@@ -64,14 +85,13 @@ const Player: React.FC<PlayerProps> = ({ position, setPosition, size, randomNumb
             const array = [];
             let directionToMove = direction;
             let [i, j] = routeMap[routeMap.length - 1];
-            // console.log(i, j)
             for (let step = 0; step < randomNumber; step++) {
                 const res = calculateDirection(i, j, directionToMove);
+                console.log(res)
                 i = res?.x!;
                 j = res?.y!;
                 directionToMove = res?.direction!;
                 array.push([i, j]);
-                console.log(res)
             }
             setDirection(directionToMove)
             setRouteMap(array)
@@ -83,19 +103,16 @@ const Player: React.FC<PlayerProps> = ({ position, setPosition, size, randomNumb
     useEffect(() => {
         if (startGame) {
             const [i, j] = currentPositionMap;
-            // console.log(routeMap);
             let k = 0;
             const animate = (step: number) => {
                 const [i, j] = routeMap[step];
-                console.log(routeMap[step])
                 setPosition({
-                    x: x * 2 * (j) + x,
-                    y: y * 2 * (i) + y
+                    x: x * (i) + x / 2,
+                    y: y * (j) + y / 2
                 })
                 setCurrentPositionMap([i, j])
                 k++;
                 if (k <= routeMap.length) {
-                    // console.log(1)
                     setTimeout(() => animate(k - 1), 400);
                 }
             };
@@ -104,12 +121,11 @@ const Player: React.FC<PlayerProps> = ({ position, setPosition, size, randomNumb
         else {
             const [i, j] = currentPositionMap;
             setPosition({
-                x: x * 2 * (i) + x,
-                y: y * 2 * (j) + y
+                x: x * (i) + x / 2,
+                y: y * (j) + y / 2
             })
         }
     }, [routeMap])
-    // console.log(position)
 
     const rotateHero = () => {
         switch (direction) {

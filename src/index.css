@@ -16,14 +16,19 @@ code {
   /* position: relative; */
   /* overflow-y: auto; */
   /* height: 100vh; */
-  background-image: url('./assest/img/fon.png');
-  background-size: cover;
-  background-repeat: no-repeat;
+  /* background-image: url('./assest/img/fon.png'); */
+  /* background-size: cover;
+  background-repeat: no-repeat; */
+  background-color: #4a6c8a;
+  gap: 5px;
+  display: flex;
+  flex-direction: column;
 }
 
 .row {
-  display: flex;
-  flex-direction: row;
+  display: grid;
+  grid-template-columns: repeat(15, 1fr);
+  gap: 5px;
 }
 
 .cell {
@@ -36,7 +41,8 @@ code {
   justify-content: center;
   align-items: center;
 }
-.random{
+
+.random {
   position: fixed;
   left: 50%;
   top: 50%;
