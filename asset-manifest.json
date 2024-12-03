@@ -1,11 +1,10 @@
 {
   "files": {
-    "main.css": "/-board-game/static/css/main.3dd867a1.css",
-    "main.js": "/-board-game/static/js/main.a2b15986.js",
+    "main.css": "/-board-game/static/css/main.eb10a080.css",
+    "main.js": "/-board-game/static/js/main.635ae517.js",
     "static/js/453.a5a72b74.chunk.js": "/-board-game/static/js/453.a5a72b74.chunk.js",
     "static/media/fortune.png": "/-board-game/static/media/fortune.61183e7a40fc04e05b23.png",
     "static/media/events.png": "/-board-game/static/media/events.4ee067349c0e5943ecea.png",
-    "static/media/hero.png": "/-board-game/static/media/hero.0dabaad667eab49e9920.png",
     "static/media/flamant.png": "/-board-game/static/media/flamant.1198fddfadb940a093d8.png",
     "static/media/skt_grand.png": "/-board-game/static/media/skt_grand.66873deff9f1f6b89b1d.png",
     "static/media/vesper.png": "/-board-game/static/media/vesper.9021ec1c1b02b61a6080.png",
@@ -31,21 +30,25 @@
     "static/media/city_hall.png": "/-board-game/static/media/city_hall.ea347f56e71e81ef9c91.png",
     "static/media/cosa_nostra.png": "/-board-game/static/media/cosa_nostra.90acec3021c2139aedd4.png",
     "static/media/police_station.png": "/-board-game/static/media/police_station.de3854593e1987e4d681.png",
+    "static/media/hotel2.jpg": "/-board-game/static/media/hotel2.48501707bcaafd2853c2.jpg",
     "static/media/monorail.png": "/-board-game/static/media/monorail.7de6fe407bf382704cb5.png",
     "static/media/parking.png": "/-board-game/static/media/parking.474044dfea5ae6b0368a.png",
+    "static/media/hotel4.jpg": "/-board-game/static/media/hotel4.a919122dfeaad0b655bd.jpg",
     "static/media/airport.png": "/-board-game/static/media/airport.a97137030cc3e8950dc7.png",
+    "static/media/hotel3.jpg": "/-board-game/static/media/hotel3.ed699c965e8e9727f29a.jpg",
+    "static/media/hotel1.jpg": "/-board-game/static/media/hotel1.8a2f875216f692dfa163.jpg",
     "static/media/bank.png": "/-board-game/static/media/bank.4e96140f93602d879264.png",
     "static/media/car_delaer_newCars.png": "/-board-game/static/media/car_delaer_newCars.a235b6830685f80f7e05.png",
     "static/media/car_dealer_secondCars.png": "/-board-game/static/media/car_dealer_secondCars.43a4f3d1e6365b806bea.png",
     "static/media/gas_station.png": "/-board-game/static/media/gas_station.88a52c2c1384d76e8959.png",
     "static/media/medical_center.png": "/-board-game/static/media/medical_center.0aeaa216df51a318cba1.png",
     "index.html": "/-board-game/index.html",
-    "main.3dd867a1.css.map": "/-board-game/static/css/main.3dd867a1.css.map",
-    "main.a2b15986.js.map": "/-board-game/static/js/main.a2b15986.js.map",
+    "main.eb10a080.css.map": "/-board-game/static/css/main.eb10a080.css.map",
+    "main.635ae517.js.map": "/-board-game/static/js/main.635ae517.js.map",
     "453.a5a72b74.chunk.js.map": "/-board-game/static/js/453.a5a72b74.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.3dd867a1.css",
-    "static/js/main.a2b15986.js"
+    "static/css/main.eb10a080.css",
+    "static/js/main.635ae517.js"
   ]
 }
