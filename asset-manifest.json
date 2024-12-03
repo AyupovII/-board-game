@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "/-board-game/static/css/main.3dd867a1.css",
+    "main.js": "/-board-game/static/js/main.c813d917.js",
+    "static/js/453.a5a72b74.chunk.js": "/-board-game/static/js/453.a5a72b74.chunk.js",
+    "static/media/events.png": "/-board-game/static/media/events.4ee067349c0e5943ecea.png",
+    "static/media/fortune.jpg": "/-board-game/static/media/fortune.9b09476b20d86795d995.jpg",
+    "static/media/hero.png": "/-board-game/static/media/hero.0dabaad667eab49e9920.png",
+    "static/media/car.jpg": "/-board-game/static/media/car.2e8d0f0a7dd3e8b2ca68.jpg",
+    "static/media/welcome.png": "/-board-game/static/media/welcome.5601dfa0a577191082a0.png",
+    "static/media/airport.png": "/-board-game/static/media/airport.a97137030cc3e8950dc7.png",
+    "static/media/simpson_20.png": "/-board-game/static/media/simpson_20.93d946f668b0970f04a5.png",
+    "static/media/bank.png": "/-board-game/static/media/bank.db43ee04e183fbb1e865.png",
+    "static/media/construction-company.png": "/-board-game/static/media/construction-company.b81a64974636e8c4d729.png",
+    "static/media/mafia-house.png": "/-board-game/static/media/mafia-house.7b55d173d0d4c04dfdcc.png",
+    "static/media/gas_station.png": "/-board-game/static/media/gas_station.88a52c2c1384d76e8959.png",
+    "static/media/casino.png": "/-board-game/static/media/casino.1b3e904b2c0385e0b02d.png",
+    "index.html": "/-board-game/index.html",
+    "main.3dd867a1.css.map": "/-board-game/static/css/main.3dd867a1.css.map",
+    "main.c813d917.js.map": "/-board-game/static/js/main.c813d917.js.map",
+    "453.a5a72b74.chunk.js.map": "/-board-game/static/js/453.a5a72b74.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.3dd867a1.css",
+    "static/js/main.c813d917.js"
+  ]
+}
