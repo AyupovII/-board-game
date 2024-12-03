@@ -1,6 +1,7 @@
 .player {
     position: absolute;
-    background: radial-gradient(circle at center, rgba(255, 255, 0, 0.5) 10%, transparent 90%);
+    // background: radial-gradient(circle at center, rgba(255, 255, 0, 0.5) 10%, transparent 90%);
+    background-color: yellow;
     background-position: center;
     animation: aura-animation 1.6s infinite;
     border-radius: 50%;

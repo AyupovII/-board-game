@@ -158,32 +158,32 @@ const Player: React.FC<PlayerProps> = ({ position, setPosition, size, randomNumb
         }
     }, [routeMap])
 
-    const rotateHero = () => {
-        switch (direction) {
-            case Direction.RIGHT: {
-                return -90;
-            }
-            case Direction.LEFT: {
-                return 90;
-            }
-            case Direction.TOP: {
-                return 180;
-            }
-            case Direction.BOTTOM: {
-                return 0;
-            }
-        }
-    }
+    // const rotateHero = () => {
+    //     switch (direction) {
+    //         case Direction.RIGHT: {
+    //             return -90;
+    //         }
+    //         case Direction.LEFT: {
+    //             return 90;
+    //         }
+    //         case Direction.TOP: {
+    //             return 180;
+    //         }
+    //         case Direction.BOTTOM: {
+    //             return 0;
+    //         }
+    //     }
+    // }
     return (
-        <img className={style.player}
-            src={heroImage}
-            alt='hero'
+        <div className={style.player}
+            // src={heroImage}
+            // alt='hero'
             style={{
                 left: position.x - size / 2,
                 top: position.y - size / 2,
                 width: size,
                 height: size,
-                transform: `rotate(${rotateHero()}deg)`
+                // transform: `rotate(${rotateHero()}deg)`
 
             }} />
     )
