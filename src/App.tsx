@@ -8,7 +8,7 @@ import CellPlayingField from './components/CellPlayingField/CellPlayingField';
 import airport from './assest/icon/airport.png';
 import bank from './assest/icon/bank.png';
 import businessEstablishment from './assest/icon/business-establishment.png';
-import carNewDealership from './assest/icon/car-new-dealership.png';
+import carNewDealership from './assest/icon/car.jpg';
 import carOldDealership from './assest/icon/car-old-dealership.png';
 import casino from './assest/icon/casino.png';
 import constructionCompany from './assest/icon/construction-company.png';

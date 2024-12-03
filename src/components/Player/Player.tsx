@@ -42,39 +42,70 @@ const Player: React.FC<PlayerProps> = ({ position, setPosition, size, randomNumb
         // }
         // else 
         console.log(Boolean(randomNumber % 2))
-        console.log(matrixMap[y]?.[x + 1], matrixMap[y + 1]?.[x])
+        console.log(matrixMap[y]?.[x - 1], matrixMap[y + 1]?.[x], directionToMove)
 
-        if (matrixMap[y]?.[x + 1] && directionToMove !== Direction.LEFT &&
-            matrixMap[y + 1]?.[x] && directionToMove !== Direction.TOP) {
-            return randomNumber % 2 ? { y, x: x + 1, direction: Direction.LEFT } : { y: y + 1, x, direction: Direction.BOTTOM }
-        }
-        else if (matrixMap[y]?.[x - 1] && directionToMove !== Direction.RIGHT &&
-            matrixMap[y + 1]?.[x] && directionToMove !== Direction.TOP) {
-            return randomNumber % 2 ? { y, x: x - 1, direction: Direction.LEFT } : { y: y + 1, x, direction: Direction.BOTTOM }
-        }
-        else if (matrixMap[y]?.[x + 1] && directionToMove !== Direction.LEFT &&
-            matrixMap[y]?.[x-1] && directionToMove !== Direction.RIGHT) {
-            return randomNumber % 2 ? { y, x: x - 1, direction: Direction.RIGHT } : { y: y, x: x+1, direction: Direction.LEFT }
-        }
-        else if (matrixMap[y]?.[x + 1] && directionToMove !== Direction.LEFT &&
-            matrixMap[y-1]?.[x] && directionToMove !== Direction.BOTTOM) {
-            return randomNumber % 2 ? { y:y-1, x: x, direction: Direction.RIGHT } : { y: y, x: x+1, direction: Direction.LEFT }
-        }
-        else if (matrixMap[y]?.[x - 1] && directionToMove !== Direction.RIGHT &&
-            matrixMap[y - 1]?.[x] && directionToMove !== Direction.BOTTOM) {
+        if (matrixMap[y]?.[x - 1] &&
+            matrixMap[y - 1]?.[x] && directionToMove === Direction.LEFT) {
+                console.log("top-left")
             return randomNumber % 2 ? { y, x: x - 1, direction: Direction.LEFT } : { y: y - 1, x, direction: Direction.TOP }
         }
+        else if (matrixMap[y]?.[x + 1]  &&
+            matrixMap[y - 1]?.[x] && directionToMove === Direction.TOP) {
+                console.log("top-right")
+            return randomNumber % 2 ? { y, x: x + 1, direction: Direction.RIGHT } : { y: y - 1, x, direction: Direction.TOP }
+        }
+        else if (matrixMap[y]?.[x - 1]  &&
+            matrixMap[y + 1]?.[x] && directionToMove === Direction.LEFT) {
+                console.log("left-bottom")
+            return randomNumber % 2 ? { y, x: x - 1, direction: Direction.LEFT } : { y: y + 1, x, direction: Direction.BOTTOM }
+        }
+        else if (matrixMap[y]?.[x + 1]  &&
+            matrixMap[y + 1]?.[x] && directionToMove === Direction.RIGHT) {
+                console.log("right-bottom")
+            return randomNumber % 2 ? { y: y + 1, x, direction: Direction.BOTTOM } : { y, x: x + 1, direction: Direction.RIGHT }
+        }
+        else if (matrixMap[y+1]?.[x]  &&
+            matrixMap[y - 1]?.[x] && directionToMove === Direction.LEFT) {
+                console.log("top-bottom")
+            return randomNumber % 2 ? { y: y - 1, x: x, direction: Direction.TOP } : { y: y + 1, x, direction: Direction.BOTTOM }
+        }
+        else if (matrixMap[y]?.[x-1]  &&
+            matrixMap[y]?.[x+1] && directionToMove === Direction.TOP) {
+                console.log("left-right")
+            return randomNumber % 2 ? { y: y, x: x-1, direction: Direction.LEFT } : { y: y, x: x+1, direction: Direction.RIGHT }
+        }
+        else if (matrixMap[y]?.[x+1]  &&
+            matrixMap[y+1]?.[x] && directionToMove === Direction.BOTTOM) {
+                console.log("bottom-right")
+            return randomNumber % 2 ? { y: y, x: x+1, direction: Direction.RIGHT } : { y: y+1, x: x, direction: Direction.BOTTOM }
+        }
+        // else if (matrixMap[y]?.[x + 1] && directionToMove !== Direction.LEFT &&
+        //     matrixMap[y]?.[x-1] && directionToMove !== Direction.RIGHT) {
+        //     return randomNumber % 2 ? { y, x: x - 1, direction: Direction.RIGHT } : { y: y, x: x+1, direction: Direction.LEFT }
+        // }
+        // else if (matrixMap[y]?.[x + 1] && directionToMove !== Direction.LEFT &&
+        //     matrixMap[y-1]?.[x] && directionToMove !== Direction.BOTTOM) {
+        //     return randomNumber % 2 ? { y:y-1, x: x, direction: Direction.RIGHT } : { y: y, x: x+1, direction: Direction.LEFT }
+        // }
+        // else if (matrixMap[y]?.[x - 1] && directionToMove !== Direction.RIGHT &&
+        //     matrixMap[y - 1]?.[x] && directionToMove !== Direction.BOTTOM) {
+        //     return randomNumber % 2 ? { y, x: x - 1, direction: Direction.LEFT } : { y: y - 1, x, direction: Direction.TOP }
+        // }
 
         else if (matrixMap[y]?.[x + 1] && directionToMove !== Direction.LEFT) {
+            console.log(1)
             return { y, x: x + 1, direction: Direction.RIGHT }
         }
         else if (matrixMap[y]?.[x - 1] && directionToMove !== Direction.RIGHT) {
+            console.log(2)
             return { y, x: x - 1, direction: Direction.LEFT }
         }
         else if (matrixMap[y - 1]?.[x] && directionToMove !== Direction.BOTTOM) {
+            console.log(3)
             return { y: y - 1, x, direction: Direction.TOP }
         }
         else if (matrixMap[y + 1]?.[x] && directionToMove !== Direction.TOP) {
+            console.log(4)
             return { y: y + 1, x, direction: Direction.BOTTOM }
         }
 
